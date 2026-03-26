@@ -75,7 +75,9 @@
   /* HERO */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(160deg, #003f5c 0%, #006994 45%, #00b4aa 100%);
+    background-image: url('https://pbvacations.com/wp-content/uploads/2026/03/Hero-scaled.jpeg');
+    background-size: cover;
+    background-position: left center;
     position: relative;
     display: flex;
     align-items: center;
@@ -83,6 +85,14 @@
     text-align: center;
     overflow: hidden;
     padding-top: 80px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(0,40,70,0.88) 0%, rgba(0,105,148,0.78) 60%, rgba(0,180,170,0.65) 100%);
+    z-index: 1;
   }
 
   .hero-waves {
@@ -111,6 +121,8 @@
     z-index: 2;
     padding: 0 20px;
   }
+
+  .bubble { z-index: 1; }
 
   .hero-eyebrow {
     font-size: 0.85rem;
@@ -1319,13 +1331,13 @@
 <footer>
   <strong>BookYourFirstCruise.com</strong>
   <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:12px;flex-wrap:wrap;">
-    <a href="mailto:tisha@bookyourfirstcruise.com" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;transition:color 0.2s;" onmouseover="this.style.color='#ffd166'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">✉️ tisha@bookyourfirstcruise.com</a>
+    <a href="/cdn-cgi/l/email-protection#50243923383110323f3f3b293f252236392223243322253923357e333f3d" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;transition:color 0.2s;" onmouseover="this.style.color='#ffd166'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">✉️ <span class="__cf_email__" data-cfemail="30445943585170525f5f5b495f454256594243445342455943551e535f5d">[email&#160;protected]</span></a>
     <a href="https://www.tiktok.com/@cruisesmart.tips" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.88rem;transition:color 0.2s;" onmouseover="this.style.color='#ffd166'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">🎵 @cruisesmart.tips</a>
   </div>
   <p style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.35);">© 2026 BookYourFirstCruise.com. All rights reserved.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
 
   // ===== QUIZ =====
@@ -1432,15 +1444,4 @@ document.addEventListener('DOMContentLoaded', function() {
   const rowObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => { entry.target.classList.add('visible'); }, i * 120);
-        rowObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.why-row').forEach(row => rowObserver.observe(row));
-
-}); // end DOMContentLoaded
-</script>
-</body>
-</html>
+        setTimeout(() => { entry.target.cl
